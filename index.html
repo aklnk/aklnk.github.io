@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html>
-        <head>
-                <title>Javascript External Script</title>
-                <script src = "script.js" type = "text/javascript"/></script>
-             </head>
+    <head>
+        <script type="module">
+            import {fillElements} from './elements.mjs';              
+            fillElements();
+        </script>
+    </head>
 <body>
-    <h1>Hello World1</h1>
-        <p>I'm hosted with GitHub Pages.</p>
-    <input type = "button" onclick = "Hello();" name = "ok" value = "Click Me" />
+    <h1>Emission spectroscopy calculator</h1>
+    <form name="myform">    
+        <select name="selectElement" style="width:250px;"> </select>    
+    </form>
 </body>
 </html>
+<!--    <input type = "text" name = "Element" value = "Fe" />>> -->
+ <!--   <form name="myform"> 
+        <select id="selectElement", name="selectElement">
+        </select>
+        <select id="selectEmission">
+            <option>Choose an emission line</option>
+        </select>
+        <input type = "button" onclick = "Hello();" name = "ok" value = "Click Me" />
+    </form>
+</body>
+</html>-->
