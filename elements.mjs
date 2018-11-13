@@ -1,4 +1,4 @@
-var elements= {
+export const elements= {
         H : { key:"H",  index: 1 },
         He: { key:"He", index: 2 },
         Li: { key:"Li", index: 3 },
@@ -35,7 +35,9 @@ var elements= {
         Se: { key:"Se", index: 34 },
         Br: { key:"Br", index: 35 },
         Kr: { key:"Kr", index: 36 }
-    };
+};
+
+
 
    
 // export function addTextToBody(text) {
@@ -44,39 +46,17 @@ var elements= {
 //     document.body.appendChild(div);
 // }    
 
-export function fillElements(){
-    const div = document.createElement('div');
-    div.textContent = "test text";
-    document.body.appendChild(div);
+// export function fillElements(){
+//     const div = document.createElement('div');
+//     div.textContent = "test text";
+//     document.body.appendChild(div);
 
-    var sel =  document.myform.selectElement;
-    var zones = ""
-    //var data = Object.keys(elements);
-    // var len = data.length();
-    for (var prop in elements){
-        console.log("obj." + prop + " = " + elements[prop]);
-        zones += "<option>" + prop + "</option>";
-    }
-    // for (i=0; i < data.length(); i++) {
-    //     //zones += "<option>" + "5" + "</option>";
-    //     a=5;
-    // }
-    sel.innerHTML =  zones; //"<option>" + data[6] + "</option>";
+//     var sel =  document.myform.selectElement;
+//     var zones = ""
+//     for (var prop in elements){
+//         console.log("obj." + prop + " = " + elements[prop]);
+//         zones += "<option>" + prop + "</option>";
+//     }
+//     sel.innerHTML =  zones; 
 
-}
-//  const testtest = "import test";
-
-// export default elements;
-
-// // Default export
-// export default () => {
-//     let greetings = `Hi from the default export!`
-//     console.log(greetings);
-    
-//     return greetings;
-//   };
-  
-//   // Named export `doStuff`
-//   export const doStuff = () => {
-//     console.log('Doing stuff…');
-//   };
+// }

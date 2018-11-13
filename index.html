@@ -2,14 +2,22 @@
 <html>
     <head>
         <script type="module">
-            import {fillElements} from './elements.mjs';              
-            fillElements();
+
+            import {elements} from './elements.mjs'; 
+            var sel =  document.myform.selectElement;
+            var zones = ""
+            for (var prop in elements){
+                console.log("obj." + prop + " = " + elements[prop]);
+                zones += "<option>" + prop + "</option>";
+            }
+            sel.innerHTML =  zones; 
+
         </script>
     </head>
 <body>
     <h1>Emission spectroscopy calculator</h1>
     <form name="myform">    
-        <select name="selectElement" style="width:250px;"> </select>    
+        <select name="selectElement" style="width:250px;" onselect="fillEmission()"> </select>    
     </form>
 </body>
 </html>
