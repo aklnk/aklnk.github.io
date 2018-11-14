@@ -2,22 +2,56 @@
 <html>
     <head>
         <script type="module">
-
             import {elements} from './elements.mjs'; 
-            var sel =  document.myform.selectElement;
+            import {emission} from './emission.mjs';
+            import {crystals} from './analyzers.mjs';
+            import {analyzers} from './analyzers.mjs';
+            window.elements = elements;
+            window.emission = emission;
+            window.analyzers = analyzers;
+            window.crystals = crystals;
+        </script>
+        <script type="module">
             var zones = ""
             for (var prop in elements){
-                console.log("obj." + prop + " = " + elements[prop]);
-                zones += "<option>" + prop + "</option>";
+                zones += "<option>" + elements[prop].symbol + "</option>";
             }
-            sel.innerHTML =  zones; 
+            var sel =  document.myform.selectElement;
+            sel.innerHTML =  zones;
+
+            //create checkboxes for crystal analyzers
+            var zones = ""
+            for (var prop in analyzers){
+                if(analyzers[prop].main==1)
+                zones += "<input type=\"checkbox\" id=\"" + prop + "\" name=\"analyzerGroup\" checked>"+ prop + "</input>";
+            }
+            var sel = document.myform.crystalFS;
+            sel.innerHTML = zones;
+
+            // var group = document.myform.crystalFS.analyzerGroup;
+            // for (var chkb in group) {
+            //     chkb.checked = true;
+            // }
 
         </script>
+        <script src="./script.js"></script>
     </head>
 <body>
-    <h1>Emission spectroscopy calculator</h1>
-    <form name="myform">    
-        <select name="selectElement" style="width:250px;" onselect="fillEmission()"> </select>    
+    <h2>vonHamos spectrometer configuration</h2>
+    <form name="myform" action="insplacement.jsp" style="width:380px"> 
+        <fieldset name="emissionFS"> 
+            <label for="selectElement" style="display:block;">Chemical element</label> 
+            <select id="selectElement" style="width:250px;display:block;" onchange="fillEmission(this.value)"></select>
+
+            <label for="selectEmission" style="display:block;">Emission line</label> 
+            <select id="selectEmission" style="width:250px;display:block;"> </select> 
+        </fieldset> 
+        <fieldset name="crystalFS">
+            <legend>aaa</legend>>
+        </fieldset>
+        <input type = "button" onclick = "calculateBraggAngles();" name = "CalculateBraggAngles" value = "Calculate Bragg Angles">
+        <br> <br>
+        <textarea name="resultArea" style="width:370px;height:250px"></textarea>
     </form>
 </body>
 </html>
@@ -28,7 +62,7 @@
         <select id="selectEmission">
             <option>Choose an emission line</option>
         </select>
-        <input type = "button" onclick = "Hello();" name = "ok" value = "Click Me" />
+        <input type = "button" onclick = "Hello();" name = "ok" value = "Click Me">
     </form>
 </body>
 </html>-->
