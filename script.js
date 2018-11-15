@@ -73,7 +73,7 @@ function calculateBraggAngles(){
     text += "\tDist. to analyzers: " + 500 / Math.sin(theta*(Math.PI / 180)) + " mm\n";
 
     text += "alternative configuration :\n";
-    text += "\t" + lstRefl[best2].crystal + lstRefl[best2].h + lstRefl[best2].k + lstRefl[best2].l + " @ " + theta +"\n";
+    text += "\t" + lstRefl[best2].crystal + lstRefl[best2].h + lstRefl[best2].k + lstRefl[best2].l + " @ " + theta2 +"\n";
     text += "\tDist. to analyzers: " + 500 / Math.sin(theta2*(Math.PI / 180)) + " mm\n";
     var resultTextArea = document.myform.resultArea;
     resultTextArea.innerHTML = text;

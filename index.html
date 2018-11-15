@@ -24,6 +24,8 @@
             for (var prop in analyzers){
                 if(analyzers[prop].main==1)
                 zones += "<input type=\"checkbox\" id=\"" + prop + "\" name=\"analyzerGroup\" checked>"+ prop + "</input>";
+                if(analyzers[prop].main==0)
+                zones += "<input type=\"checkbox\" id=\"" + prop + "\" name=\"analyzerGroup\">"+ prop + "</input>";
             }
             var sel = document.myform.crystalFS;
             sel.innerHTML = zones;
