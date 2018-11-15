@@ -61,8 +61,20 @@ function calculateBraggAngles(){
             }
         }
     }
-    text = "Element " + elements[selEl].symbol;
-    //text += "Emission\t" + Object.keys(emission[indEl])[indEm] + " " + emission[indEl][Object.keys(emission[indEl])[indEm]].e +" eV";
+    text = "Element\t\t" + elements[indEl].symbol + "\n";
+    var en = emission[indEl][Object.keys(emission[indEl])[indEm]].e;
+    var ilvl = emission[indEl][Object.keys(emission[indEl])[indEm]].iLvl;
+    var flvl = emission[indEl][Object.keys(emission[indEl])[indEm]].fLvl;
+    text += "Emission\t" + Object.keys(emission[indEl])[indEm] + " " + en +" eV\n";
+    text += "Transition\t" + flvl + "->" + ilvl +"\n";
+
+    text += "vonHamos configuration :\n";
+    text += "\t" + lstRefl[best].crystal + lstRefl[best].h + lstRefl[best].k + lstRefl[best].l + " @ " + theta +"\n";
+    text += "\tDist. to analyzers: " + 500 / Math.sin(theta*(Math.PI / 180)) + " mm\n";
+
+    text += "alternative configuration :\n";
+    text += "\t" + lstRefl[best2].crystal + lstRefl[best2].h + lstRefl[best2].k + lstRefl[best2].l + " @ " + theta +"\n";
+    text += "\tDist. to analyzers: " + 500 / Math.sin(theta2*(Math.PI / 180)) + " mm\n";
     var resultTextArea = document.myform.resultArea;
     resultTextArea.innerHTML = text;
 
