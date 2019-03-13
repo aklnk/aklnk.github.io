@@ -13,18 +13,18 @@
         </script>
         <script type="module">
             var zones = ""
-            for (var prop in elements){
-                zones += "<option>" + elements[prop].symbol + "</option>";
+            for (var prop in window.elements){
+                zones += "<option>" + window.elements[prop].symbol + "</option>";
             }
             var sel =  document.myform.selectElement;
             sel.innerHTML =  zones;
 
             //create checkboxes for crystal analyzers
             var zones = ""
-            for (var prop in analyzers){
-                if(analyzers[prop].main==1)
+            for (var prop in window.analyzers){
+                if(window.analyzers[prop].main==1)
                 zones += "<input type=\"checkbox\" id=\"" + prop + "\" name=\"analyzerGroup\" checked>"+ prop + "</input>";
-                if(analyzers[prop].main==0)
+                if(window.analyzers[prop].main==0)
                 zones += "<input type=\"checkbox\" id=\"" + prop + "\" name=\"analyzerGroup\">"+ prop + "</input>";
             }
             var sel = document.myform.crystalFS;
@@ -39,8 +39,8 @@
         <script src="./script.js"></script>
     </head>
 <body>
-    <h2>vonHamos spectrometer configuration</h2>
-    <form name="myform" action="insplacement.jsp" style="width:380px"> 
+    <h2>vonHamos spectrometer calculator</h2>
+    <form name="myform" action="insplacement.jsp" style="width:385px"> 
         <fieldset name="emissionFS"> 
             <label for="selectElement" style="display:block;">Chemical element</label> 
             <select id="selectElement" style="width:250px;display:block;" onchange="fillEmission(this.value)"></select>
@@ -53,7 +53,7 @@
         </fieldset>
         <input type = "button" onclick = "calculateBraggAngles();" name = "CalculateBraggAngles" value = "Calculate Bragg Angles">
         <br> <br>
-        <textarea name="resultArea" style="width:370px;height:250px"></textarea>
+        <textarea name="resultArea" style="width:380px;height:250px"></textarea>
     </form>
 </body>
 </html>
