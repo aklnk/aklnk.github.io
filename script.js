@@ -19,7 +19,7 @@ function fillEmission(selectedElement){
     var data = emission[ind]
     var zones = ""
     for (var prop in data){
-        zones += "<option>" + prop + " " + data[prop].e + " eV (" + data[prop].int +   ") </option>";
+        zones += "<option>" + prop.padEnd(6) + " " + data[prop].e.toFixed(1) + " eV (" + data[prop].int.toFixed(3)+   ") </option>";
     }
     var sel =  document.myform.selectEmission;
             sel.innerHTML =  zones;
