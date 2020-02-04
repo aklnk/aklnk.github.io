@@ -18,7 +18,7 @@ export const  analyzers= {
 
     Si422 : { key:"Si422", crystal: "Si", h: 4, k: 2, l: 2, main: 1 },
 
-//    Si531 : { key:"Si531", crystal: "Si", h: 5, k: 3, l: 1,  main: 0 },
+    Si531 : { key:"Si531", crystal: "Si", h: 5, k: 3, l: 1,  main: 0 },
 
 //    Si553 : { key:"Si553", crystal: "Si", h: 5, k: 5, l: 3, main: 0 },
 	
