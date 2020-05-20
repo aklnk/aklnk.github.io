@@ -18,7 +18,7 @@ export const  analyzers= {
 
     Si422 : { key:"Si422", crystal: "Si", h: 4, k: 2, l: 2, main: 1 },
 
-    Si531 : { key:"Si531", crystal: "Si", h: 5, k: 3, l: 1,  main: 1 },
+    Si531 : { key:"Si531", crystal: "Si", h: 5, k: 3, l: 1,  main: 0 },
 
 //    Si553 : { key:"Si553", crystal: "Si", h: 5, k: 5, l: 3, main: 0 },
 	
@@ -29,7 +29,9 @@ export const  analyzers= {
 //	Si733 : { key:"Si642", crystal: "Si", h: 7, k: 3, l: 3, main: 0 },
 
 
-//    Ge111 : { key:"Ge111", crystal: "Ge", h: 1, k: 1, l: 1, main : 0 },
+    Ge111 : { key:"Ge111", crystal: "Ge", h: 1, k: 1, l: 1, main : 0 },
+    Ge111 : { key:"Ge111", crystal: "Ge", h: 2, k: 2, l: 0, main : 0 },
+    Ge111 : { key:"Ge111", crystal: "Ge", h: 4, k: 0, l: 0, main : 0 },
 
     Quarz: { key:"Quarz", index: 3 }
 };
