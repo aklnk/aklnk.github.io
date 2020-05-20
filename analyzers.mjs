@@ -30,8 +30,8 @@ export const  analyzers= {
 
 
     Ge111 : { key:"Ge111", crystal: "Ge", h: 1, k: 1, l: 1, main : 0 },
-    Ge111 : { key:"Ge220", crystal: "Ge", h: 2, k: 2, l: 0, main : 0 },
-    Ge111 : { key:"Ge400", crystal: "Ge", h: 4, k: 0, l: 0, main : 0 },
+    Ge220 : { key:"Ge220", crystal: "Ge", h: 2, k: 2, l: 0, main : 0 },
+    Ge400 : { key:"Ge400", crystal: "Ge", h: 4, k: 0, l: 0, main : 0 },
 
 //    Quarz: { key:"Quarz", index: 3 }
 };
